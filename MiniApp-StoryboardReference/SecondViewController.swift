@@ -7,23 +7,17 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+final class SecondViewController: UIViewController {
 
+    @IBOutlet private var countLabel: UILabel!
+    private var count: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        countLabel.text = String(count)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapCountUpButton(_ sender: Any) {
+        count += 1
+        countLabel.text = String(count)
     }
-    */
-
 }
